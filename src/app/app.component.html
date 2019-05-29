@@ -1,8 +1,23 @@
 <div class="body-container">
-  <mat-form-field class="form-field">
-    <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value">
-    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+    <mat-form-field class="form-field">
+        <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value" (input)="onInputChange($event)">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="onInputReset()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <div class="packages-container">
+        <app-package-view *ngFor="let i of packageEvaluations"
+                          [name]="i.packageName"
+                          [npmPackage]="i.npmPackage"
+                          (showContributors)="onShowContributors($event)">
+        </app-package-view>
+    </div>
+</div>
+
+<div class="all-screen-layer" *ngIf="isLoad" (click)="isLoad = false">
+    <mat-progress-spinner
+            class="spinner"
+            [mode]="'indeterminate'"
+            [value]="value">
+    </mat-progress-spinner>
 </div>

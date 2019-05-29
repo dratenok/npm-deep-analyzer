@@ -1,0 +1,15 @@
+.contributor-card {
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.content-container {
+    display: flex;
+}
+
+.image-card {
+    margin: 0 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

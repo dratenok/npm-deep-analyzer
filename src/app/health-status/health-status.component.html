@@ -1,0 +1,6 @@
+<div class="container">
+  <span>{{field}}</span>
+  <div class="health-container">
+    <div class="status active" [style.background]="color" [style.width]="((count | number) || 0) * 100 + '%'"></div>
+  </div>
+</div>

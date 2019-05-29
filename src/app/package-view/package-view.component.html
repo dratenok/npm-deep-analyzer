@@ -1,0 +1,19 @@
+<mat-card class="package-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{npmPackage.collected.metadata.name}}</mat-card-title>
+    <mat-card-subtitle>{{npmPackage.collected.metadata.version}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <app-health-status [count]="npmPackage.score.detail.maintenance" field="maintenance" [color]="'#00796b'"></app-health-status>
+    <app-health-status [count]="npmPackage.score.detail.popularity" field="popularity" [color]="'#1976d2'"></app-health-status>
+    <app-health-status [count]="npmPackage.score.detail.quality" field="quality" [color]="'#e64a19'"></app-health-status>
+    <app-health-status [count]="npmPackage.score.final" field="final" [color]="'#c2185b'"></app-health-status>
+  </mat-card-content>
+  <mat-card-actions class="more-cards-actions">
+    <a target="_blank" [href]="npmPackage.collected.metadata.links.repository">
+      <button mat-button>Repository page</button>
+    </a>
+    <button (click)="onShowContributors()" mat-button>Show contributors</button>
+  </mat-card-actions>
+</mat-card>

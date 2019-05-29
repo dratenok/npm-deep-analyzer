@@ -1,0 +1,21 @@
+<a [href]="contributor.html_url" target="_blank" *ngFor="let contributor of data">
+    <mat-card class="contributor-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{contributor.login}}</mat-card-title>
+        </mat-card-header>
+        <div class="content-container">
+            <img class="image-card" mat-card-image [src]="contributor.avatar_url" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <div class="info-line">
+                    <span>Count of followers: </span>
+                    {{contributor.followers}}
+                </div>
+                <div class="info-line">
+                    <span>Created at: </span>
+                    {{contributor.created_at | date}}
+                </div>
+            </mat-card-content>
+        </div>
+    </mat-card>
+</a>

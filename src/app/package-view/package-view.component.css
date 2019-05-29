@@ -1,0 +1,11 @@
+.package-card {
+    width: 175px;
+    margin: 20px;
+}
+
+.more-cards-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
